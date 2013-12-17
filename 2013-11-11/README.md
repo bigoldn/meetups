@@ -10,8 +10,8 @@ Mixture of Markov Chains is a simple generative probabilistic model that can app
  
 Links to original papers:
 
-http://www.cis.upenn.edu/~sudipto/mypapers/mcmix.pdf
-http://machinelearning.wustl.edu/mlpapers/paper_files/NIPS2003_AA02.pdf
+* http://www.cis.upenn.edu/~sudipto/mypapers/mcmix.pdf
+* http://machinelearning.wustl.edu/mlpapers/paper_files/NIPS2003_AA02.pdf
 
 [Java Implementation](https://github.com/JoseLlarena/Mixtures-Of-Markov-Chains)
 
