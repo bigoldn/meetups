@@ -17,3 +17,9 @@ Bio: Dr John Graham-Cumming is an experienced programmer who works for CloudFlar
 k-nearest neighbours or kNN is one of the simplest machine learning methods to understand, and has many appealing properties, but a naive implementation will have problems on very large data sets. This talk will introduce the algorithm, describe its performance characteristics, and discuss some tricks to speed it up on differentkinds of data -- and how to apply them in a production setting.
 
 Bio: Andrew left the Web 1.0 scene in 2001 to engage in more esoteric pursuits, and since then has bounced around a number of different fields and industry sectors including computational linguistics, bioinformatics, healthcare research, social media, publishing, online games and education. These days he leads Pearson's Data Analytics & Visualization team in London.
+
+Andrew's slides are in this directory in PDF format, or on Google Docs at:
+
+https://docs.google.com/presentation/d/12VFFta77zahALNIU_VHt_oWux9W_H9AAiZXlz1TMBUE
+
+
