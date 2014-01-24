@@ -4,6 +4,9 @@ Podcast Links:
 * http://skillsmatter.com/podcast/home/kinesis-or-storm
 * http://skillsmatter.com/podcast/home/free-lunches-silver-bullets-and-np-complete-problems
 
+Code links:
+* https://github.com/mvogiatzis/probabilistic-counting
+
 Blurb:
 * Probabilistic Counting on ClickStream data using Amazon Kinesis or Storm - Michael Vogiatzis
 
