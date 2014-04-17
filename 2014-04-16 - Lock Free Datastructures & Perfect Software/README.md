@@ -1,5 +1,7 @@
 Meetup Link: http://www.meetup.com/big-o-london/events/172564952/ 
 
+Slides from sergio: http://slides.com/srvalencia/lock-free-data-structures/
+
 Blurb:
 
 * Introduction to lock-free programming - Sergio Rodríguez Valencia (@chickentyping)
