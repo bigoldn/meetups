@@ -3,7 +3,7 @@
 * http://www.meetup.com/big-o-london/events/224383139/
 * https://skillsmatter.com/meetups/7262-london-big-o-august-meetup.
 
-# A broad view on word vectors - Dmitrijs Milajevs (@dimazest)
+# A broad view on word vectors - Dmitrijs Milajevs ([@dimazest](https://twitter.com/dimazest))
 
 An overview of lexical distributional semantics, a field of computational linguistics that is concerned with word meaning representation as vectors in a highly dimensional vector space. The talk will go trough the historical overview and recent advances in the field and some of its applications. 
 
@@ -11,7 +11,7 @@ An overview of lexical distributional semantics, a field of computational lingui
 
 Bio: Dmitrijs Milajevs is a phd student at Queen Mary University of London studying compositional distributional semantics and its application to dialog analysis. As a computer scientist he is interested in distributed systems, automated testing and big data, as programmer he is interested in Python.
 
-# Practicalities of analysing biosignals — Emlyn Clay (@emlynclay)
+# Practicalities of analysing biosignals — Emlyn Clay ([@emlynclay](https://twitter.com/emlynclay))
 
 This will be a talk on the data structures and the analytical techniques to go about analysing electrophysiology signals from the body.
 
