@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)https://dl.dropboxusercontent.com/u/10070473/www/slides/BigO/randomJungles.html#/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Random Vegetation</title>
+  <link rel="stylesheet" href="./Random Vegetation_files/reveal.css">
+  <link rel="stylesheet" href="./Random Vegetation_files/night.css" id="theme">
+  <link rel="stylesheet" href="./Random Vegetation_files/zenburn.css">
+<style type="text/css"></style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">.MathJax_Preview .MJXc-math {color: inherit!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXc-script {font-size: .8em}
+.MJXc-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXc-bold {font-weight: bold}
+.MJXc-italic {font-style: italic}
+.MJXc-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-largeop {font-size: 150%}
+.MJXc-largeop.MJXc-int {vertical-align: -.2em}
+.MJXc-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXc-display {display: block; text-align: center; margin: 1em 0}
+.MJXc-math span {display: inline-block}
+.MJXc-box {display: block!important; text-align: center}
+.MJXc-box:after {content: " "}
+.MJXc-rule {display: block!important; margin-top: .1em}
+.MJXc-char {display: block!important}
+.MJXc-mo {margin: 0 .15em}
+.MJXc-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXc-denom {display: inline-table!important; width: 100%}
+.MJXc-denom > * {display: table-row!important}
+.MJXc-surd {vertical-align: top}
+.MJXc-surd > * {display: block!important}
+.MJXc-script-box > *  {display: table!important; height: 50%}
+.MJXc-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXc-script-box > *:last-child > * {vertical-align: bottom}
+.MJXc-script-box > * > * > * {display: block!important}
+.MJXc-mphantom {visibility: hidden}
+.MJXc-munderover {display: inline-table!important}
+.MJXc-over {display: inline-block!important; text-align: center}
+.MJXc-over > * {display: block!important}
+.MJXc-munderover > * {display: table-row!important}
+.MJXc-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXc-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXc-mtr {display: table-row!important}
+.MJXc-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXc-mtr > .MJXc-mtd:first-child {padding-left: 0}
+.MJXc-mtr:first-child > .MJXc-mtd {padding-top: 0}
+.MJXc-mlabeledtr {display: table-row!important}
+.MJXc-mlabeledtr > .MJXc-mtd:first-child {padding-left: 0}
+.MJXc-mlabeledtr:first-child > .MJXc-mtd {padding-top: 0}
+.MJXc-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXc-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXc-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXc-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXc-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXc-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXc-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXc-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXc-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXc-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXc-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_CHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('https://dl.dropboxusercontent.com/u/10070473/www/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?rev=2.5.3') format('woff'), url('https://dl.dropboxusercontent.com/u/10070473/www/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?rev=2.5.3') format('opentype')}
+@font-face {font-family: MathJax_Main-bold; src: url('https://dl.dropboxusercontent.com/u/10070473/www/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?rev=2.5.3') format('woff'), url('https://dl.dropboxusercontent.com/u/10070473/www/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?rev=2.5.3') format('opentype')}
+@font-face {font-family: MathJax_Main-italic; src: url('https://dl.dropboxusercontent.com/u/10070473/www/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?rev=2.5.3') format('woff'), url('https://dl.dropboxusercontent.com/u/10070473/www/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?rev=2.5.3') format('opentype')}
+@font-face {font-family: MathJax_Math-italic; src: url('https://dl.dropboxusercontent.com/u/10070473/www/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?rev=2.5.3') format('woff'), url('https://dl.dropboxusercontent.com/u/10070473/www/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?rev=2.5.3') format('opentype')}
+@font-face {font-family: MathJax_Caligraphic; src: url('https://dl.dropboxusercontent.com/u/10070473/www/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?rev=2.5.3') format('woff'), url('https://dl.dropboxusercontent.com/u/10070473/www/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?rev=2.5.3') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('https://dl.dropboxusercontent.com/u/10070473/www/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?rev=2.5.3') format('woff'), url('https://dl.dropboxusercontent.com/u/10070473/www/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?rev=2.5.3') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('https://dl.dropboxusercontent.com/u/10070473/www/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?rev=2.5.3') format('woff'), url('https://dl.dropboxusercontent.com/u/10070473/www/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?rev=2.5.3') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('https://dl.dropboxusercontent.com/u/10070473/www/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?rev=2.5.3') format('woff'), url('https://dl.dropboxusercontent.com/u/10070473/www/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?rev=2.5.3') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('https://dl.dropboxusercontent.com/u/10070473/www/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?rev=2.5.3') format('woff'), url('https://dl.dropboxusercontent.com/u/10070473/www/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?rev=2.5.3') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body style="transition: -webkit-transform 0.8s ease;"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div></div><div id="MathJax_Message" style="display: none;"></div>
+  <!-- Wrap the entire slide show in a div using the "reveal" class. -->
+  <div class="reveal slide center" role="application" data-transition-speed="default" data-background-transition="fade">
+    <!-- Wrap all slides in a single "slides" class -->
+    <div class="slides" style="width: 960px; height: 700px; zoom: 1.28186;">
+
+      <!-- ALL SLIDES GO HERE -->
+      <section class="present" style="top: 106px; display: block;">
+        <h1>Random Vegetation</h1>
+        <p>Isolation Forests and Random Jungles For Fun</p>
+        <p class="fragment" data-fragment-index="0"><em>Disclaimer: I am not an expert.</em></p>
+      </section>
+
+      <section hidden="" aria-hidden="true" class="future" style="top: 0px; display: block;">
+        <h2>Why Random Vegetation?</h2>
+        <p>My dad was a plant ecologist, so Random Forests are inherently interesting because of the botanical link.</p>
+        <p>
+        <img src="./Random Vegetation_files/quadrat-survey.jpg" width="50%" alt="Packets">
+        </p><p>
+        </p><p class="fragment" data-fragment-index="0">Also became interested while working with 'NClassify'.</p>
+      </section>
+
+      <section data-background="#4d7e65" style="color: rgb(255, 255, 255); top: 0px; display: block;" class="has-dark-background future" hidden="" aria-hidden="true">
+        <h2>Some Quick Background</h2>
+
+        <div style="float:left;width:50%;">
+
+
+        <p style="text-align: left;">A <strong>Decision Tree</strong> is a simple predictive model consisting of binary split nodes and leaf nodes.</p>
+
+        <ol>
+        <li class="fragment" style="text-align: left;" data-fragment-index="0"><strong>Split Nodes:</strong> Contain a binary split function which decides which of it's two children a sample progresses to.</li>
+
+        <li class="fragment" style="text-align: left;" data-fragment-index="1"><strong>Leaf Nodes:</strong> Contain a class prediction (either a single class or a class density).</li>
+        </ol>
+        </div>
+
+        <div style="float:right;width:50%;padding-right:0px;">
+          <img src="./Random Vegetation_files/dtree.png" alt="Packets">
+        </div>
+
+      </section>
+
+
+      <section data-background="#4d7e65" style="color: rgb(255, 255, 255); top: 330px; display: none;" class="has-dark-background future" hidden="" aria-hidden="true">
+        <h3><strong>Building Decision Trees</strong></h3>
+        <p class="fragment" data-fragment-index="0">There are many algorithms for building decision trees (<em>CART</em>, <em>C4.5</em>), but the basic idea is usually: </p>
+        <ol>
+          <li class="fragment" data-fragment-index="1"> Choose a loss function: Gini, Entropy.</li>
+          <li class="fragment" data-fragment-index="2"> <p>Follow this basic procedure:</p>
+              <pre><code data-trim="" contenteditable="" class=" hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">DecisionTree</span><span class="hljs-params">(X, y, loss_function)</span>:</span>
+    tree = node(X, y)
+    nodes = [tree]
+    <span class="hljs-keyword">while</span> len(nodes) != <span class="hljs-number">0</span>:
+        node = nodes.pop()
+        <span class="hljs-keyword">if</span> len(node.X) &gt; <span class="hljs-number">1</span>:
+            <span class="hljs-comment"># Find the best single feature split with respect to the loss</span>
+            best_split = find_best_single_feaute_split(node.X, node.y, loss_function)
+            nodeL, nodeR = node.split(best_split)
+            node.left_child, node.right_child  = nodeL, nodeR
+            nodes.append([nodeL, nodeR])
+    <span class="hljs-keyword">return</span> tree</code></pre>
+          </li>
+        </ol>
+
+        <p class="fragment" data-fragment-index="3">This recursive procedure does not result in the <em>optimal</em> decision tree, but that is an NP-hard problem.
+
+      </p></section>
+
+
+      <section data-background="#4d7e65" style="color: rgb(255, 255, 255); top: 330px; display: none;" class="has-dark-background future" hidden="" aria-hidden="true">
+
+
+        <h3><strong>Random Forests</strong></h3>
+
+        <p class="fragment" style="text-align: left;" data-fragment-index="0">Decision Trees built to sufficient depth give powerful models with low bias, but have very high variance.</p>
+
+        <p class="fragment" style="text-align: left;" data-fragment-index="1">Bagging (or Bootstrap Aggregation) many trees is an obvious solution. Each tree identically distributed but not independent so:</p>
+
+        <ul>
+        <li class="fragment" data-fragment-index="2"><strong>Bias</strong> is unchanged.<p></p>
+        </li><li class="fragment" data-fragment-index="3"><p> <strong>Variance</strong> of an average of <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-1-Frame"><nobr><span class="math" id="MathJax-Span-1" role="math" style="width: 0.946em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.887em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.654em 1000em 2.715em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-2"><span class="mi" id="MathJax-Span-3" style="font-family: MathJax_Math-italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.062em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.538em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.878em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-1">N</script> estimators, each with variance <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-2-Frame"><nobr><span class="math" id="MathJax-Span-4" role="math" style="width: 0.652em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.593em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.949em 1000em 2.715em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-5"><span class="mi" id="MathJax-Span-6" style="font-family: MathJax_Math-italic;">σ<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.538em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.566em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-2">\sigma</script> and pairwise correleation <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-3-Frame"><nobr><span class="math" id="MathJax-Span-7" role="math" style="width: 0.593em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.534em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.949em 1000em 2.951em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-8"><span class="mi" id="MathJax-Span-9" style="font-family: MathJax_Math-italic;">ρ</span></span><span style="display: inline-block; width: 0px; height: 2.538em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.816em; vertical-align: -0.309em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-3">\rho</script> is</p>
+        <p> <span class="MathJax_Preview" style="color: inherit;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-4-Frame"><nobr><span class="math" id="MathJax-Span-10" role="math" style="width: 7.019em; display: inline-block;"><span style="display: inline-block; position: relative; width: 6.607em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.241em 1000em 3.659em -999.997em); top: -2.768em; left: 0.003em;"><span class="mrow" id="MathJax-Span-11"><span class="mi" id="MathJax-Span-12" style="font-family: MathJax_Math-italic;">ρ</span><span class="msubsup" id="MathJax-Span-13"><span style="display: inline-block; position: relative; width: 1.064em; height: 0px;"><span style="position: absolute; clip: rect(3.423em 1000em 4.189em -999.997em); top: -4.006em; left: 0.003em;"><span class="mi" id="MathJax-Span-14" style="font-family: MathJax_Math-italic;">σ<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; top: -4.419em; left: 0.652em;"><span class="mn" id="MathJax-Span-15" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span></span><span class="mo" id="MathJax-Span-16" style="font-family: MathJax_Main; padding-left: 0.239em;">+</span><span class="mfrac" id="MathJax-Span-17" style="padding-left: 0.239em;"><span style="display: inline-block; position: relative; width: 2.42em; height: 0px; margin-right: 0.121em; margin-left: 0.121em;"><span style="position: absolute; clip: rect(3.187em 1000em 4.425em -999.997em); top: -4.714em; left: 50%; margin-left: -1.117em;"><span class="mrow" id="MathJax-Span-18"><span class="mn" id="MathJax-Span-19" style="font-family: MathJax_Main;">1</span><span class="mo" id="MathJax-Span-20" style="font-family: MathJax_Main; padding-left: 0.239em;">−</span><span class="mi" id="MathJax-Span-21" style="font-family: MathJax_Math-italic; padding-left: 0.239em;">ρ</span></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; clip: rect(3.128em 1000em 4.189em -999.997em); top: -3.299em; left: 50%; margin-left: -0.469em;"><span class="mi" id="MathJax-Span-22" style="font-family: MathJax_Math-italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.062em;"></span></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; clip: rect(0.828em 1000em 1.241em -999.997em); top: -1.294em; left: 0.003em;"><span style="border-left-width: 2.42em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.25px; vertical-align: 0.003em;"></span><span style="display: inline-block; width: 0px; height: 1.064em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-23"><span style="display: inline-block; position: relative; width: 1.064em; height: 0px;"><span style="position: absolute; clip: rect(3.423em 1000em 4.189em -999.997em); top: -4.006em; left: 0.003em;"><span class="mi" id="MathJax-Span-24" style="font-family: MathJax_Math-italic;">σ<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; top: -4.419em; left: 0.652em;"><span class="mn" id="MathJax-Span-25" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.774em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 2.316em; vertical-align: -0.809em;"></span></span></nobr></span></div><script type="math/tex; mode=display" id="MathJax-Element-4">\rho \sigma^2 + \frac{1-\rho}{N} \sigma^2</script> </p>
+        </li>
+        </ul>
+        <p class="fragment" style="text-align: left;" data-fragment-index="4"> Random Forests add an extra step of including <em>random features for splitting</em>, which significantly decorrelates the individual estimators, reducing <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-5-Frame"><nobr><span class="math" id="MathJax-Span-26" role="math" style="width: 0.593em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.534em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.949em 1000em 2.951em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-27"><span class="mi" id="MathJax-Span-28" style="font-family: MathJax_Math-italic;">ρ</span></span><span style="display: inline-block; width: 0px; height: 2.538em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.816em; vertical-align: -0.309em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-5">\rho</script>.</p>
+
+      </section>
+
+      <section data-background="#4d7e65" style="color: rgb(255, 255, 255); top: 330px; display: none;" class="has-dark-background future" hidden="" aria-hidden="true">
+
+
+        <p><strong>Comparing Trees and Forests.</strong></p>
+
+          <img src="./Random Vegetation_files/comparison.png" alt="Packets" width="750">
+
+        <p></p>
+
+      </section>
+
+      <section hidden="" aria-hidden="true" class="future" style="top: 330px; display: none;">
+        <p>This talk will present two new (to me) applications of these ideas:</p>
+        <li> <strong>Isolation Forests:</strong> A random forest based algorithm for outlier detection.
+        </li>
+        <li> <strong>Random Jungles:</strong> An extension of Random Forests which attempts save memory by allowing the Trees to become DAGs.
+        </li>
+      </section>
+
+      <section data-background="#007777" style="color: rgb(255, 255, 255); top: 330px; display: none;" class="has-dark-background future" hidden="" aria-hidden="true">
+        <h3>Isolation Forests: The Intuition</h3>
+
+        <p>The basic idea is to use trees for finding outliers by using a measure of <strong>isolation</strong>.
+        </p>
+
+        <span class="fragment fade-in" data-fragment-index="0">
+        <img src="./Random Vegetation_files/outlier_isolation.png" alt="Packets" width="500">
+        <p>
+        Points in a sample are considered to be isolated if they are <em>easy to separate</em> from the rest of the sample.
+        
+
+      </p></span></section>
+
+      <section data-background="#007777" style="color: rgb(255, 255, 255); top: 330px; display: none;" class="has-dark-background future" hidden="" aria-hidden="true">
+        <h3><strong>The Isolation Tree</strong>
+        </h3>
+        <p style="text-align: left;">The Isolation Tree measures isolation by relating it to the depth of a point within a <em>random Decision Tree.</em></p>
+
+        <span class="fragment fade-in" data-fragment-index="0">
+        <p style="text-align: left;">For sample <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-6-Frame"><nobr><span class="math" id="MathJax-Span-29" role="math" style="width: 0.946em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.887em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.949em 1000em 3.01em -999.997em); top: -2.827em; left: 0.003em;"><span class="mrow" id="MathJax-Span-30"><span class="texatom" id="MathJax-Span-31"><span class="mrow" id="MathJax-Span-32"><span class="mi" id="MathJax-Span-33" style="font-family: MathJax_Main-bold;">X</span></span></span></span><span style="display: inline-block; width: 0px; height: 2.833em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.878em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-6">\mathbf{X}</script> we build an Isolation Tree:</p>
+                  <pre><code data-trim="" contenteditable="" class=" hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">IsolationTree</span><span class="hljs-params">(X)</span>:</span>
+    tree = node(X)
+    nodes = [tree]
+    <span class="hljs-keyword">while</span> len(nodes) != <span class="hljs-number">0</span>:
+        node = nodes.pop()
+        <span class="hljs-keyword">if</span> len(node.X) &gt; <span class="hljs-number">1</span>:
+            nodeL, nodeR = node.random_split()
+    <span class="hljs-keyword">return</span> tree</code></pre>
+        </span>
+        <span class="fragment fade-in" data-fragment-index="1">
+          <p style="text-align: left;">Then define:</p>
+          <ol>
+          <li><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-7-Frame"><nobr><span class="math" id="MathJax-Span-34" role="math" style="width: 2.067em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.949em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.831em 1000em 3.187em -999.997em); top: -2.768em; left: 0.003em;"><span class="mrow" id="MathJax-Span-35"><span class="mi" id="MathJax-Span-36" style="font-family: MathJax_Math-italic;">h</span><span class="mo" id="MathJax-Span-37" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-38" style="font-family: MathJax_Math-italic;">x</span><span class="mo" id="MathJax-Span-39" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.774em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.191em; vertical-align: -0.309em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-7">h(x)</script>: The path length of a point. This is the depth required to reach a sample point in the random tree. This depends on <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-8-Frame"><nobr><span class="math" id="MathJax-Span-40" role="math" style="width: 0.946em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.887em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.654em 1000em 2.715em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-41"><span class="mi" id="MathJax-Span-42" style="font-family: MathJax_Math-italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.062em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.538em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.878em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-8">N</script>.</li>
+          <li><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-9-Frame"><nobr><span class="math" id="MathJax-Span-43" role="math" style="width: 15.333em; display: inline-block;"><span style="display: inline-block; position: relative; width: 14.449em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.831em 1000em 3.187em -999.997em); top: -2.768em; left: 0.003em;"><span class="mrow" id="MathJax-Span-44"><span class="mi" id="MathJax-Span-45" style="font-family: MathJax_Math-italic;">c</span><span class="mo" id="MathJax-Span-46" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-47" style="font-family: MathJax_Math-italic;">n</span><span class="mo" id="MathJax-Span-48" style="font-family: MathJax_Main;">)</span><span class="mo" id="MathJax-Span-49" style="font-family: MathJax_Main; padding-left: 0.298em;">=</span><span class="mn" id="MathJax-Span-50" style="font-family: MathJax_Main; padding-left: 0.298em;">2</span><span class="mi" id="MathJax-Span-51" style="font-family: MathJax_Math-italic;">H<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.062em;"></span></span><span class="mo" id="MathJax-Span-52" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-53" style="font-family: MathJax_Math-italic;">n</span><span class="mo" id="MathJax-Span-54" style="font-family: MathJax_Main; padding-left: 0.239em;">−</span><span class="mn" id="MathJax-Span-55" style="font-family: MathJax_Main; padding-left: 0.239em;">1</span><span class="mo" id="MathJax-Span-56" style="font-family: MathJax_Main;">)</span><span class="mo" id="MathJax-Span-57" style="font-family: MathJax_Main; padding-left: 0.239em;">−</span><span class="mo" id="MathJax-Span-58" style="font-family: MathJax_Main; padding-left: 0.239em;">(</span><span class="mn" id="MathJax-Span-59" style="font-family: MathJax_Main;">2</span><span class="mo" id="MathJax-Span-60" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-61" style="font-family: MathJax_Math-italic;">n</span><span class="mo" id="MathJax-Span-62" style="font-family: MathJax_Main; padding-left: 0.239em;">−</span><span class="mn" id="MathJax-Span-63" style="font-family: MathJax_Main; padding-left: 0.239em;">1</span><span class="mo" id="MathJax-Span-64" style="font-family: MathJax_Main;">)</span><span class="texatom" id="MathJax-Span-65"><span class="mrow" id="MathJax-Span-66"><span class="mo" id="MathJax-Span-67" style="font-family: MathJax_Main;">/</span></span></span><span class="mi" id="MathJax-Span-68" style="font-family: MathJax_Math-italic;">n</span><span class="mo" id="MathJax-Span-69" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.774em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.191em; vertical-align: -0.309em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-9">c(n) = 2H(n-1)-(2(n-1)/n)</script>: The average path length of an unsuccessful search in a binary search tree.
+          </li></ol>
+          <p style="text-align: left;">The point is that <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-10-Frame"><nobr><span class="math" id="MathJax-Span-70" role="math" style="width: 7.314em; display: inline-block;"><span style="display: inline-block; position: relative; width: 6.902em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.89em 1000em 3.246em -999.997em); top: -2.827em; left: 0.003em;"><span class="mrow" id="MathJax-Span-71"><span class="texatom" id="MathJax-Span-72"><span class="mrow" id="MathJax-Span-73"><span class="mi" id="MathJax-Span-74" style="font-family: MathJax_Main-bold;">E</span></span></span><span class="mo" id="MathJax-Span-75" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-76" style="font-family: MathJax_Math-italic;">h</span><span class="mo" id="MathJax-Span-77" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-78" style="font-family: MathJax_Math-italic;">x</span><span class="mo" id="MathJax-Span-79" style="font-family: MathJax_Main;">)</span><span class="mo" id="MathJax-Span-80" style="font-family: MathJax_Main;">)</span><span class="mo" id="MathJax-Span-81" style="font-family: MathJax_Main; padding-left: 0.298em;">≈</span><span class="mi" id="MathJax-Span-82" style="font-family: MathJax_Math-italic; padding-left: 0.298em;">c</span><span class="mo" id="MathJax-Span-83" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-84" style="font-family: MathJax_Math-italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.062em;"></span></span><span class="mo" id="MathJax-Span-85" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.833em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.191em; vertical-align: -0.309em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-10">\mathbf{E}(h(x))\approx c(N)</script></p>
+        </span>
+</section>
+<section data-background="#007777" style="color: rgb(255, 255, 255); top: 330px; display: none;" class="has-dark-background future" hidden="" aria-hidden="true">
+        <h3><strong>The Isolation Forest</strong></h3>
+         <p class="fragment" style="text-align: left;" data-fragment-index="0"> As with the classification application, we can build Bootstrap Aggregated Isolation Trees with random split features so that we approximate:</p>
+         <p class="fragment" data-fragment-index="1"><span class="MathJax_Preview" style="color: inherit;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-11-Frame"><nobr><span class="math" id="MathJax-Span-86" role="math" style="width: 11.383em; display: inline-block;"><span style="display: inline-block; position: relative; width: 10.734em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(2.715em 1000em 4.484em -999.997em); top: -3.83em; left: 0.003em;"><span class="mrow" id="MathJax-Span-87"><span class="texatom" id="MathJax-Span-88"><span class="mrow" id="MathJax-Span-89"><span class="mi" id="MathJax-Span-90" style="font-family: MathJax_Main-bold;">E</span></span></span><span class="mo" id="MathJax-Span-91" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-92" style="font-family: MathJax_Math-italic;">h</span><span class="mo" id="MathJax-Span-93" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-94" style="font-family: MathJax_Math-italic;">x</span><span class="mo" id="MathJax-Span-95" style="font-family: MathJax_Main;">)</span><span class="mo" id="MathJax-Span-96" style="font-family: MathJax_Main;">)</span><span class="mo" id="MathJax-Span-97" style="font-family: MathJax_Main; padding-left: 0.298em;">=</span><span class="mn" id="MathJax-Span-98" style="font-family: MathJax_Main; padding-left: 0.298em;">1</span><span class="texatom" id="MathJax-Span-99"><span class="mrow" id="MathJax-Span-100"><span class="mo" id="MathJax-Span-101" style="font-family: MathJax_Main;">/</span></span></span><span class="mi" id="MathJax-Span-102" style="font-family: MathJax_Math-italic;">m</span><span class="mo" id="MathJax-Span-103" style="font-family: MathJax_Size2; vertical-align: 0.003em; padding-left: 0.18em;">∑</span><span class="msubsup" id="MathJax-Span-104" style="padding-left: 0.18em;"><span style="display: inline-block; position: relative; width: 0.887em; height: 0px;"><span style="position: absolute; clip: rect(3.128em 1000em 4.189em -999.997em); top: -4.006em; left: 0.003em;"><span class="mi" id="MathJax-Span-105" style="font-family: MathJax_Math-italic;">h</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; top: -3.83em; left: 0.593em;"><span class="mi" id="MathJax-Span-106" style="font-size: 70.7%; font-family: MathJax_Math-italic;">i</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span></span><span class="mo" id="MathJax-Span-107" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-108" style="font-family: MathJax_Math-italic;">x</span><span class="mo" id="MathJax-Span-109" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 3.835em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.628em; vertical-align: -0.559em;"></span></span></nobr></span></div><script type="math/tex; mode=display" id="MathJax-Element-11">\mathbf{E}(h(x)) = 1/m \sum h_i(x)</script></p>
+
+        <span class="fragment fade-in" data-fragment-index="2">
+        <p style="text-align: left;">From this we define the anomaly score as</p>
+        <p> <span class="MathJax_Preview" style="color: inherit;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-12-Frame"><nobr><span class="math" id="MathJax-Span-110" role="math" style="width: 7.845em; display: inline-block;"><span style="display: inline-block; position: relative; width: 7.373em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.654em 1000em 3.187em -999.997em); top: -2.768em; left: 0.003em;"><span class="mrow" id="MathJax-Span-111"><span class="mi" id="MathJax-Span-112" style="font-family: MathJax_Math-italic;">a</span><span class="mo" id="MathJax-Span-113" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-114" style="font-family: MathJax_Math-italic;">x</span><span class="mo" id="MathJax-Span-115" style="font-family: MathJax_Main;">)</span><span class="mo" id="MathJax-Span-116" style="font-family: MathJax_Main; padding-left: 0.298em;">=</span><span class="msubsup" id="MathJax-Span-117" style="padding-left: 0.298em;"><span style="display: inline-block; position: relative; width: 4.13em; height: 0px;"><span style="position: absolute; clip: rect(3.187em 1000em 4.189em -999.997em); top: -4.006em; left: 0.003em;"><span class="mn" id="MathJax-Span-118" style="font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; top: -4.419em; left: 0.475em;"><span class="texatom" id="MathJax-Span-119"><span class="mrow" id="MathJax-Span-120"><span class="mo" id="MathJax-Span-121" style="font-size: 70.7%; font-family: MathJax_Main;">−</span><span class="mi" id="MathJax-Span-122" style="font-size: 70.7%; font-family: MathJax_Math-italic;">h</span><span class="mo" id="MathJax-Span-123" style="font-size: 70.7%; font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-124" style="font-size: 70.7%; font-family: MathJax_Math-italic;">x</span><span class="mo" id="MathJax-Span-125" style="font-size: 70.7%; font-family: MathJax_Main;">)</span><span class="texatom" id="MathJax-Span-126"><span class="mrow" id="MathJax-Span-127"><span class="mo" id="MathJax-Span-128" style="font-size: 70.7%; font-family: MathJax_Main;">/</span></span></span><span class="mi" id="MathJax-Span-129" style="font-size: 70.7%; font-family: MathJax_Math-italic;">c</span><span class="mo" id="MathJax-Span-130" style="font-size: 70.7%; font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-131" style="font-size: 70.7%; font-family: MathJax_Math-italic;">n</span><span class="mo" id="MathJax-Span-132" style="font-size: 70.7%; font-family: MathJax_Main;">)</span></span></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.774em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.378em; vertical-align: -0.309em;"></span></span></nobr></span></div><script type="math/tex; mode=display" id="MathJax-Element-12">a(x) = 2^{-h(x)/c(n)} </script>  </p>
+        <p style="text-align: left;">and find that (heuristically)</p>
+        <ul>
+          <li><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-13-Frame"><nobr><span class="math" id="MathJax-Span-133" role="math" style="width: 2.538em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.361em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.949em 1000em 2.951em -999.997em); top: -2.768em; left: 0.003em;"><span class="mrow" id="MathJax-Span-134"><span class="mi" id="MathJax-Span-135" style="font-family: MathJax_Math-italic;">s</span><span class="mo" id="MathJax-Span-136" style="font-family: MathJax_Main; padding-left: 0.298em;">≈</span><span class="mn" id="MathJax-Span-137" style="font-family: MathJax_Main; padding-left: 0.298em;">1</span></span><span style="display: inline-block; width: 0px; height: 2.774em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.816em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-13"> s \approx 1 </script> implies definitely outlier.</li>
+          <li><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-14-Frame"><nobr><span class="math" id="MathJax-Span-138" role="math" style="width: 3.6em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.364em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.949em 1000em 3.01em -999.997em); top: -2.768em; left: 0.003em;"><span class="mrow" id="MathJax-Span-139"><span class="mi" id="MathJax-Span-140" style="font-family: MathJax_Math-italic;">s</span><span class="mo" id="MathJax-Span-141" style="font-family: MathJax_Main; padding-left: 0.298em;">≪</span><span class="mn" id="MathJax-Span-142" style="font-family: MathJax_Main; padding-left: 0.298em;">0.5</span></span><span style="display: inline-block; width: 0px; height: 2.774em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.878em; vertical-align: -0.122em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-14"> s \ll 0.5</script> implies safely a normal instance (we use this as the boundary).</li>
+          <li><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-15-Frame"><nobr><span class="math" id="MathJax-Span-143" role="math" style="width: 3.953em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.718em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.89em 1000em 2.951em -999.997em); top: -2.768em; left: 0.003em;"><span class="mrow" id="MathJax-Span-144"><span class="mi" id="MathJax-Span-145" style="font-family: MathJax_Main;">∀</span><span class="mi" id="MathJax-Span-146" style="font-family: MathJax_Math-italic;">s</span><span class="mo" id="MathJax-Span-147" style="font-family: MathJax_Main; padding-left: 0.298em;">≈</span><span class="mn" id="MathJax-Span-148" style="font-family: MathJax_Main; padding-left: 0.298em;">0.5</span></span><span style="display: inline-block; width: 0px; height: 2.774em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.878em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-15"> \forall s \approx 0.5</script> the entire sample is fairly well distributed.</li>
+        </ul>
+        </span>
+
+      </section>
+
+       <section data-background="#007777" style="color: rgb(255, 255, 255); top: 330px; display: none;" class="has-dark-background future" hidden="" aria-hidden="true">
+        <h3><strong>Properties Of The Isolation Forest</strong></h3>
+        <ul>
+          <li><p>Isolation Forests work well with small sample sizes (density measures are not used) and so subsampling can dramatically speed up and improve detection.</p>
+        </li></ul>
+          <img src="./Random Vegetation_files/swamping_isolation.png" alt="Packets" width="600">
+        
+        <ul>
+          <li class="fragment fade-in" data-fragment-index="0">Isolation Forests are fast to build and evaluate. In many cases full depth is not required and once built they are quick to evaluate.</li>
+
+          <li class="fragment fade-in" data-fragment-index="1">High dimensional, messy and categorical data are all easy to handle without modification of the basic procedure.</li>
+        </ul>
+      </section>
+
+
+
+      <section data-background="#007777" style="color: rgb(255, 255, 255); top: 330px; display: none;" class="has-dark-background future" hidden="" aria-hidden="true">
+        <p>How Does It Compare?</p>
+
+        <span class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="0">
+        <span class="fragment fade-out" data-fragment-index="1">
+          <img src="./Random Vegetation_files/isolation_example_1.png" alt="Packets">
+        </span>
+        </span>
+        <span class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="1">
+        <span class="fragment fade-out" data-fragment-index="2">
+          <img src="./Random Vegetation_files/isolation_example_2.png" alt="Packets">
+        </span>
+        </span>
+        <span class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="2">
+          <img src="./Random Vegetation_files/isolation_example_3.png" alt="Packets">
+        </span>
+      </section>
+
+      <section data-background="#007777" style="color: rgb(255, 255, 255); top: 330px; display: none;" class="has-dark-background future" hidden="" aria-hidden="true">
+        <p>A Real World Example: Atmospheric Time Series</p>
+
+        <span class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="0">
+        <span class="fragment fade-out" data-fragment-index="1">
+          <img src="./Random Vegetation_files/ts1.png" alt="Packets" width="800">
+        </span>
+        </span>
+        <span class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="1">
+        <span class="fragment fade-out" data-fragment-index="2">
+          <img src="./Random Vegetation_files/ts2.png" alt="Packets" width="800">
+        </span>
+        </span>
+        <span class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="2">
+        <span class="fragment fade-out" data-fragment-index="3">
+          <img src="./Random Vegetation_files/ts3.png" alt="Packets" width="800">
+        </span>
+        </span>
+        <span class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="3">
+        <span class="fragment fade-out" data-fragment-index="4">
+          <img src="./Random Vegetation_files/ts4.png" alt="Packets" width="800">
+        </span>
+        </span>
+      </section>
+
+      <section data-background="#8c4738" style="color: rgb(255, 255, 255); top: 330px; display: none;" class="has-dark-background future" hidden="" aria-hidden="true">
+        <h2>Random Jungles</h2>
+        <p class="fragment" data-fragment-index="0">Random Jungles extend Random Forests by allowing the binary internal nodes to share children.</p>
+
+        <p class="fragment" data-fragment-index="1"><em>Random Jungles are ensembles of simple DAGs (directed acyclic graphs).</em> </p>
+
+        <img class="fragment" src="./Random Vegetation_files/dag_example_fixed.png" alt="Packets" data-fragment-index="2">
+
+      </section>
+
+      <section data-background="#8c4738" style="color: rgb(255, 255, 255); top: 330px; display: none;" class="has-dark-background future" hidden="" aria-hidden="true">
+      <h4>Motivation: The Problem With Decision Trees</h4>
+        <p>Decision Trees are incredibly popular (especially as Random Forests) but there are some problems:</p><p>
+          </p><ol>
+            <li class="fragment" data-fragment-index="0">Memory use: The memory requirement of decision trees increases exponentially with the average depth. </li>
+            <li class="fragment" data-fragment-index="1">Slow training: Although they can be trained in parallel, many trees can be required, and building can be slow, for large sample sizes.</li>
+            <li class="fragment" data-fragment-index="2">Shallow Trees are weak: Deep trees are required to generalization to be effective.</li>
+            <li class="fragment" data-fragment-index="3">Ensembles of many trees are hard to understand: No one really knows what is going on with their model.</li>
+          </ol>
+      </section>
+
+      <section data-background="#8c4738" style="color: rgb(255, 255, 255); top: 330px; display: none;" class="has-dark-background future" hidden="" aria-hidden="true">
+      <h4>Motivation: Jungles And Memory</h4>
+        <p>Jungles can limit the growth of memory requirements while still expressing complicated relationships</p>
+        <span class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="0">
+        <span class="fragment fade-out" data-fragment-index="1">
+          <img src="./Random Vegetation_files/memory_test.png" alt="Packets" width="1000">
+        </span>
+        </span>
+        <span class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="1">
+
+          <img src="./Random Vegetation_files/memory_test_dag.png" alt="Packets" width="300">
+
+        </span>
+      </section>
+
+      <section data-background="#8c4738" style="color: rgb(255, 255, 255); top: 330px; display: none;" class="has-dark-background future" hidden="" aria-hidden="true">
+      <h4>Motivation: Jungles And generalization</h4>
+        <p>Consider trying to identify a cow..</p><p>
+        <img src="./Random Vegetation_files/cow_sheep_example.png" alt="Packets" width="800">
+        </p><p class="fragment" data-fragment-index="0">Jungles allow for more natural expression of segmented relationships.</p>
+      </section>
+
+      <section data-background="#8c4738" style="color: rgb(255, 255, 255); top: 330px; display: none;" class="has-dark-background future" hidden="" aria-hidden="true">
+        <h3>Building Jungles</h3>
+        <p style="text-align: left;">The basic approach is to assume that we can build each DAG <strong>one level at a time</strong>. At each level we need to simultaneously choose the split features/values and the branching structure.</p>
+
+        <span class="fragment fade-in" data-fragment-index="0">
+        <p>With loss function <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-16-Frame"><nobr><span class="math" id="MathJax-Span-149" role="math" style="width: 0.769em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.71em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.654em 1000em 2.715em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-150"><span class="mi" id="MathJax-Span-151" style="font-family: MathJax_Math-italic;">L</span></span><span style="display: inline-block; width: 0px; height: 2.538em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.878em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-16">L</script> we define:</p>
+        <ol>
+        <li><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-17-Frame"><nobr><span class="math" id="MathJax-Span-152" role="math" style="width: 1.123em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.064em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.654em 1000em 2.715em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-153"><span class="mi" id="MathJax-Span-154" style="font-family: MathJax_Math-italic;">M<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.062em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.538em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.878em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-17">M</script>: The maximum number of output nodes for each</li>
+        <li><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-18-Frame"><nobr><span class="math" id="MathJax-Span-155" role="math" style="width: 0.946em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.887em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.3em 1000em 2.538em -999.997em); top: -2.179em; left: 0.003em;"><span class="mrow" id="MathJax-Span-156"><span class="msubsup" id="MathJax-Span-157"><span style="display: inline-block; position: relative; width: 0.828em; height: 0px;"><span style="position: absolute; clip: rect(3.128em 1000em 4.366em -999.997em); top: -4.006em; left: 0.003em;"><span class="mi" id="MathJax-Span-158" style="font-family: MathJax_Math-italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.062em;"></span></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; top: -3.83em; left: 0.475em;"><span class="mi" id="MathJax-Span-159" style="font-size: 70.7%; font-family: MathJax_Math-italic;">i</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.185em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.066em; vertical-align: -0.247em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-18">f_i</script>: The split function from node <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-19-Frame"><nobr><span class="math" id="MathJax-Span-160" role="math" style="width: 0.416em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.357em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.713em 1000em 2.715em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-161"><span class="mi" id="MathJax-Span-162" style="font-family: MathJax_Math-italic;">i</span></span><span style="display: inline-block; width: 0px; height: 2.538em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.816em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-19">i</script>.</li>
+        <li><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-20-Frame"><nobr><span class="math" id="MathJax-Span-163" role="math" style="width: 1.064em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.005em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.3em 1000em 2.538em -999.997em); top: -2.179em; left: 0.003em;"><span class="mrow" id="MathJax-Span-164"><span class="msubsup" id="MathJax-Span-165"><span style="display: inline-block; position: relative; width: 0.946em; height: 0px;"><span style="position: absolute; clip: rect(3.128em 1000em 4.189em -999.997em); top: -4.006em; left: 0.003em;"><span class="mi" id="MathJax-Span-166" style="font-family: MathJax_Math-italic;">S<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.062em;"></span></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; top: -3.83em; left: 0.593em;"><span class="mi" id="MathJax-Span-167" style="font-size: 70.7%; font-family: MathJax_Math-italic;">i</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.185em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.066em; vertical-align: -0.247em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-20">S_i</script>: The sample reaching node <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-21-Frame"><nobr><span class="math" id="MathJax-Span-168" role="math" style="width: 0.416em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.357em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.713em 1000em 2.715em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-169"><span class="mi" id="MathJax-Span-170" style="font-family: MathJax_Math-italic;">i</span></span><span style="display: inline-block; width: 0px; height: 2.538em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.816em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-21">i</script> in the next level.</li>
+        <li><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-22-Frame"><nobr><span class="math" id="MathJax-Span-171" role="math" style="width: 1.949em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.831em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.89em 1000em 3.128em -999.997em); top: -2.768em; left: 0.003em;"><span class="mrow" id="MathJax-Span-172"><span class="msubsup" id="MathJax-Span-173"><span style="display: inline-block; position: relative; width: 0.593em; height: 0px;"><span style="position: absolute; clip: rect(3.128em 1000em 4.189em -999.997em); top: -4.006em; left: 0.003em;"><span class="mi" id="MathJax-Span-174" style="font-family: MathJax_Math-italic;">l</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; top: -3.83em; left: 0.298em;"><span class="mi" id="MathJax-Span-175" style="font-size: 70.7%; font-family: MathJax_Math-italic;">i</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span></span><span class="mo" id="MathJax-Span-176" style="font-family: MathJax_Main;">,</span><span class="msubsup" id="MathJax-Span-177" style="padding-left: 0.18em;"><span style="display: inline-block; position: relative; width: 0.769em; height: 0px;"><span style="position: absolute; clip: rect(3.423em 1000em 4.189em -999.997em); top: -4.006em; left: 0.003em;"><span class="mi" id="MathJax-Span-178" style="font-family: MathJax_Math-italic;">r</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; top: -3.83em; left: 0.475em;"><span class="mi" id="MathJax-Span-179" style="font-size: 70.7%; font-family: MathJax_Math-italic;">i</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.774em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.066em; vertical-align: -0.247em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-22">l_i,r_i</script>: The right and left outputs from node <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-23-Frame"><nobr><span class="math" id="MathJax-Span-180" role="math" style="width: 0.416em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.357em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.713em 1000em 2.715em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-181"><span class="mi" id="MathJax-Span-182" style="font-family: MathJax_Math-italic;">i</span></span><span style="display: inline-block; width: 0px; height: 2.538em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.816em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-23">i</script>.</li>
+        </ol>
+        </span>
+        <span class="fragment fade-in" data-fragment-index="1">
+        <p>Once the tree has been built to the point where <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-24-Frame"><nobr><span class="math" id="MathJax-Span-183" role="math" style="width: 1.123em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.064em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.654em 1000em 2.715em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-184"><span class="mi" id="MathJax-Span-185" style="font-family: MathJax_Math-italic;">M<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.062em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.538em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.878em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-24">M</script> constrains the total number of outputs we must optimize</p>
+        <p><span class="MathJax_Preview" style="color: inherit;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-25-Frame"><nobr><span class="math" id="MathJax-Span-186" role="math" style="width: 8.847em; display: inline-block;"><span style="display: inline-block; position: relative; width: 8.317em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.654em 1000em 4.307em -999.997em); top: -2.768em; left: 0.003em;"><span class="mrow" id="MathJax-Span-187"><span class="munderover" id="MathJax-Span-188"><span style="display: inline-block; position: relative; width: 4.071em; height: 0px;"><span style="position: absolute; clip: rect(3.187em 1000em 4.189em -999.997em); top: -4.006em; left: 1.182em;"><span class="mo" id="MathJax-Span-189" style="font-family: MathJax_Main;">min</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; clip: rect(3.305em 1000em 4.484em -999.997em); top: -3.299em; left: 0.003em;"><span class="texatom" id="MathJax-Span-190"><span class="mrow" id="MathJax-Span-191"><span class="mo" id="MathJax-Span-192" style="font-size: 70.7%; font-family: MathJax_Main;">{</span><span class="msubsup" id="MathJax-Span-193"><span style="display: inline-block; position: relative; width: 0.593em; height: 0px;"><span style="position: absolute; clip: rect(3.364em 1000em 4.307em -999.997em); top: -4.006em; left: 0.003em;"><span class="mi" id="MathJax-Span-194" style="font-size: 70.7%; font-family: MathJax_Math-italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.062em;"></span></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; top: -3.83em; left: 0.357em;"><span class="mi" id="MathJax-Span-195" style="font-size: 50%; font-family: MathJax_Math-italic;">i</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span></span><span class="mo" id="MathJax-Span-196" style="font-size: 70.7%; font-family: MathJax_Main;">}</span><span class="mo" id="MathJax-Span-197" style="font-size: 70.7%; font-family: MathJax_Main;">,</span><span class="mo" id="MathJax-Span-198" style="font-size: 70.7%; font-family: MathJax_Main;">{</span><span class="msubsup" id="MathJax-Span-199"><span style="display: inline-block; position: relative; width: 0.416em; height: 0px;"><span style="position: absolute; clip: rect(3.364em 1000em 4.189em -999.997em); top: -4.006em; left: 0.003em;"><span class="mi" id="MathJax-Span-200" style="font-size: 70.7%; font-family: MathJax_Math-italic;">l</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; top: -3.889em; left: 0.239em;"><span class="mi" id="MathJax-Span-201" style="font-size: 50%; font-family: MathJax_Math-italic;">i</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span></span><span class="mo" id="MathJax-Span-202" style="font-size: 70.7%; font-family: MathJax_Main;">}</span><span class="mo" id="MathJax-Span-203" style="font-size: 70.7%; font-family: MathJax_Main;">,</span><span class="mo" id="MathJax-Span-204" style="font-size: 70.7%; font-family: MathJax_Main;">{</span><span class="msubsup" id="MathJax-Span-205"><span style="display: inline-block; position: relative; width: 0.534em; height: 0px;"><span style="position: absolute; clip: rect(3.541em 1000em 4.189em -999.997em); top: -4.006em; left: 0.003em;"><span class="mi" id="MathJax-Span-206" style="font-size: 70.7%; font-family: MathJax_Math-italic;">r</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; top: -3.889em; left: 0.298em;"><span class="mi" id="MathJax-Span-207" style="font-size: 50%; font-family: MathJax_Math-italic;">i</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span></span><span class="mo" id="MathJax-Span-208" style="font-size: 70.7%; font-family: MathJax_Main;">}</span></span></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span></span><span class="munderover" id="MathJax-Span-209" style="padding-left: 0.18em;"><span style="display: inline-block; position: relative; width: 1.418em; height: 0px;"><span style="position: absolute; clip: rect(2.892em 1000em 4.661em -999.997em); top: -4.006em; left: 0.003em;"><span class="mo" id="MathJax-Span-210" style="font-family: MathJax_Size2; vertical-align: 0.003em;">∑</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; clip: rect(3.364em 1000em 4.425em -999.997em); top: -2.945em; left: 0.593em;"><span class="mi" id="MathJax-Span-211" style="font-size: 70.7%; font-family: MathJax_Math-italic;">j</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span></span><span class="mi" id="MathJax-Span-212" style="font-family: MathJax_Math-italic; padding-left: 0.18em;">L</span><span class="mo" id="MathJax-Span-213" style="font-family: MathJax_Main;">(</span><span class="msubsup" id="MathJax-Span-214"><span style="display: inline-block; position: relative; width: 1.005em; height: 0px;"><span style="position: absolute; clip: rect(3.128em 1000em 4.189em -999.997em); top: -4.006em; left: 0.003em;"><span class="mi" id="MathJax-Span-215" style="font-family: MathJax_Math-italic;">S<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.062em;"></span></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; top: -3.83em; left: 0.593em;"><span class="mi" id="MathJax-Span-216" style="font-size: 70.7%; font-family: MathJax_Math-italic;">j</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span></span><span class="mo" id="MathJax-Span-217" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.774em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 2.566em; vertical-align: -1.497em;"></span></span></nobr></span></div><script type="math/tex; mode=display" id="MathJax-Element-25">\min_{\{f_i\},\{l_i\},\{r_i\}}\sum_j L(S_j)</script></p>
+        <p>subject to having <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-26-Frame"><nobr><span class="math" id="MathJax-Span-218" role="math" style="width: 1.123em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.064em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.654em 1000em 2.715em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-219"><span class="mi" id="MathJax-Span-220" style="font-family: MathJax_Math-italic;">M<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.062em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.538em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.878em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-26">M</script> or less distinct <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-27-Frame"><nobr><span class="math" id="MathJax-Span-221" role="math" style="width: 0.71em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.652em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.3em 1000em 2.538em -999.997em); top: -2.179em; left: 0.003em;"><span class="mrow" id="MathJax-Span-222"><span class="msubsup" id="MathJax-Span-223"><span style="display: inline-block; position: relative; width: 0.593em; height: 0px;"><span style="position: absolute; clip: rect(3.128em 1000em 4.189em -999.997em); top: -4.006em; left: 0.003em;"><span class="mi" id="MathJax-Span-224" style="font-family: MathJax_Math-italic;">l</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; top: -3.83em; left: 0.298em;"><span class="mi" id="MathJax-Span-225" style="font-size: 70.7%; font-family: MathJax_Math-italic;">i</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.185em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.003em; vertical-align: -0.247em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-27">l_i</script> and <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-28-Frame"><nobr><span class="math" id="MathJax-Span-226" role="math" style="width: 0.887em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.828em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.595em 1000em 2.538em -999.997em); top: -2.179em; left: 0.003em;"><span class="mrow" id="MathJax-Span-227"><span class="msubsup" id="MathJax-Span-228"><span style="display: inline-block; position: relative; width: 0.769em; height: 0px;"><span style="position: absolute; clip: rect(3.423em 1000em 4.189em -999.997em); top: -4.006em; left: 0.003em;"><span class="mi" id="MathJax-Span-229" style="font-family: MathJax_Math-italic;">r</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; top: -3.83em; left: 0.475em;"><span class="mi" id="MathJax-Span-230" style="font-size: 70.7%; font-family: MathJax_Math-italic;">i</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.185em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.753em; vertical-align: -0.247em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-28">r_i</script>.</p>
+        </span>
+      </section>
+
+      <section data-background="#8c4738" style="color: rgb(255, 255, 255); top: 330px; display: none;" class="has-dark-background future" hidden="" aria-hidden="true">
+        <p style="text-align: left;">There are a few proposed algorithms for optimizing these choices, but we'll see <strong>LSearch</strong>. </p>
+        <p class="fragment" style="text-align: left;" data-fragment-index="0"><strong>LSearch</strong> switches between two coordinate descent, first on split-optimization and then on branch-optimization.</p>
+        <span class="fragment fade-in" data-fragment-index="1">
+                      <pre><code data-trim="" contenteditable="" class=" hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">LSearch</span><span class="hljs-params">(in_nodes, loss, M)</span>:</span>
+    split_values, out_edges = initialize(in_nodes, M)
+    Li = loss(in_nodes, split_values, out_edges)
+    <span class="hljs-keyword">while</span> <span class="hljs-string">"still improving"</span>:
+        <span class="hljs-comment"># split-optimization</span>
+        <span class="hljs-keyword">for</span> node <span class="hljs-keyword">in</span> in_nodes:
+            split_values[node] = best_split(loss, node, in_nodes, split_values, out_edges)
+        <span class="hljs-comment"># branch optimization</span>
+        <span class="hljs-keyword">for</span> node <span class="hljs-keyword">in</span> in_nodes:
+            out_edges[node] = best_out(loss, node, in_nodes, split_values, out_edges)
+        total_loss = loss(in_nodes, split_values, out_edges)
+    <span class="hljs-keyword">return</span> split_values, out_edge</code></pre>
+        </span>
+        <p class="fragment" data-fragment-index="2">Notes:</p>
+        <ol>
+        <li class="fragment" data-fragment-index="3">The <em>best_split</em> and <em>best_out</em> functions require the entire set of nodes in order to optimize.</li>
+        <li class="fragment" data-fragment-index="4">The <em>best_split</em> and <em>best_out</em> may result in a node only having a single out node.</li>
+        </ol>
+
+
+      </section>
+
+      <section data-background="#8c4738" style="color: rgb(255, 255, 255); top: 330px; display: none;" class="has-dark-background future" hidden="" aria-hidden="true">
+        <h3>Examples</h3>
+        <p>Random Jungles: Some pictures</p>
+            <img src="./Random Vegetation_files/dag_types.png" alt="Packets" width="800">
+      </section>
+
+      <section data-background="#8c4738" style="color: rgb(255, 255, 255); top: 330px; display: none;" class="has-dark-background future" hidden="" aria-hidden="true">
+        <h3>Random Jungles: Taking The Ensemble</h3>
+        <p>Taking a random ensemble as in the case of Random Forests is simple. Both randomizations can be used. </p><p>
+
+        </p><p class="fragment" data-fragment-index="0"> However the required number of ensemble elements seems to be much lower. Benefits of taking a larger set of DAGs tail off quickly.</p>
+
+        <p class="fragment" data-fragment-index="1"> Adding some randomness to the size <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-29-Frame"><nobr><span class="math" id="MathJax-Span-231" role="math" style="width: 1.123em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.064em; height: 0px; font-size: 106%;"><span style="position: absolute; clip: rect(1.654em 1000em 2.715em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-232"><span class="mi" id="MathJax-Span-233" style="font-family: MathJax_Math-italic;">M<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.062em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.538em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.878em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-29">M</script> has also shown to help somewhat.</p>
+      </section>
+
+      <section data-background="#8c4738" style="color: rgb(255, 255, 255); top: 330px; display: none;" class="has-dark-background future" hidden="" aria-hidden="true">
+        <h3>Random Jungles: Taking The Ensemble</h3>
+            <img src="./Random Vegetation_files/compare1.png" alt="Packets" width="800">
+      </section>
+
+
+
+      <section hidden="" aria-hidden="true" class="future" style="top: 330px; display: none;">
+        <h2>Questions?</h2>
+        <span class="fragment" data-fragment-index="0">
+          <h4>References</h4>
+            <li><a href="http://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf">Isolation Forest</a> </li>
+            <li><a href="http://research.microsoft.com/pubs/205439/DecisionJunglesNIPS2013.pdf">Decision Jungles: Compact and Rich Models for Classification</a> </li>
+         <p></p>
+         <h4>Code</h4>
+         <li><a href="https://github.com/scikit-learn/scikit-learn/pull/4163">Sklearn pull request for Isolation Forests</a> </li>
+         <li><a href="https://github.com/padarn">My github where you can find Random Jungles</a> </li>
+      </span>
+      </section>
+
+
+      </div>
+  <div class="backgrounds"><div class="slide-background present" data-loaded="true" style="display: block;"></div><div class="slide-background future" data-loaded="true" style="display: block;"></div><div class="slide-background future" data-background-hash="#4d7e65nullnullnullnullnullnullnullnull" style="display: block; background: rgb(77, 126, 101);" data-loaded="true"></div><div class="slide-background future" data-background-hash="#4d7e65nullnullnullnullnullnullnullnull" style="display: none; background: rgb(77, 126, 101);"></div><div class="slide-background future" data-background-hash="#4d7e65nullnullnullnullnullnullnullnull" style="display: none; background: rgb(77, 126, 101);"></div><div class="slide-background future" data-background-hash="#4d7e65nullnullnullnullnullnullnullnull" style="display: none; background: rgb(77, 126, 101);"></div><div class="slide-background future" style="display: none;"></div><div class="slide-background future" data-background-hash="#007777nullnullnullnullnullnullnullnull" style="display: none; background: rgb(0, 119, 119);"></div><div class="slide-background future" data-background-hash="#007777nullnullnullnullnullnullnullnull" style="display: none; background: rgb(0, 119, 119);"></div><div class="slide-background future" data-background-hash="#007777nullnullnullnullnullnullnullnull" style="display: none; background: rgb(0, 119, 119);"></div><div class="slide-background future" data-background-hash="#007777nullnullnullnullnullnullnullnull" style="display: none; background: rgb(0, 119, 119);"></div><div class="slide-background future" data-background-hash="#007777nullnullnullnullnullnullnullnull" style="display: none; background: rgb(0, 119, 119);"></div><div class="slide-background future" data-background-hash="#007777nullnullnullnullnullnullnullnull" style="display: none; background: rgb(0, 119, 119);"></div><div class="slide-background future" data-background-hash="#8c4738nullnullnullnullnullnullnullnull" style="display: none; background: rgb(140, 71, 56);"></div><div class="slide-background future" data-background-hash="#8c4738nullnullnullnullnullnullnullnull" style="display: none; background: rgb(140, 71, 56);"></div><div class="slide-background future" data-background-hash="#8c4738nullnullnullnullnullnullnullnull" style="display: none; background: rgb(140, 71, 56);"></div><div class="slide-background future" data-background-hash="#8c4738nullnullnullnullnullnullnullnull" style="display: none; background: rgb(140, 71, 56);"></div><div class="slide-background future" data-background-hash="#8c4738nullnullnullnullnullnullnullnull" style="display: none; background: rgb(140, 71, 56);"></div><div class="slide-background future" data-background-hash="#8c4738nullnullnullnullnullnullnullnull" style="display: none; background: rgb(140, 71, 56);"></div><div class="slide-background future" data-background-hash="#8c4738nullnullnullnullnullnullnullnull" style="display: none; background: rgb(140, 71, 56);"></div><div class="slide-background future" data-background-hash="#8c4738nullnullnullnullnullnullnullnull" style="display: none; background: rgb(140, 71, 56);"></div><div class="slide-background future" data-background-hash="#8c4738nullnullnullnullnullnullnullnull" style="display: none; background: rgb(140, 71, 56);"></div><div class="slide-background future" style="display: none;"></div></div><div class="progress" style="display: block;"><span style="width: 0px;"></span></div><aside class="controls" style="display: block;"><div class="navigate-left"></div><div class="navigate-right enabled fragmented"></div><div class="navigate-up"></div><div class="navigate-down"></div></aside><div class="slide-number"></div><div class="pause-overlay"></div><div id="aria-status-div" aria-live="polite" aria-atomic="true" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px 1px 1px 1px);">
+        Random Vegetation
+        Isolation Forests and Random Jungles For Fun
+        Disclaimer: I am not an expert.
+      </div></div>
+  <script src="./Random Vegetation_files/head.min.js"></script>
+  <script src="./Random Vegetation_files/reveal.js"></script>
+  <script type="text/javascript" src="./Random Vegetation_files/MathJax.js">
+  </script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script><script type="text/javascript" src="./Random Vegetation_files/highlight.js"></script><script type="text/javascript" src="./Random Vegetation_files/zoom.js"></script><script type="text/javascript" src="./Random Vegetation_files/notes.js"></script>
+
+
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: MathJax_Size2, sans-serif;"></div></div></body></html>
