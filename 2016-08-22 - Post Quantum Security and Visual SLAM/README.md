@@ -1,0 +1,16 @@
+# Meetup Links:
+
+* http://www.meetup.com/big-o-london/events/232706612/
+* https://skillsmatter.com/meetups/8167-big-0-london-meetup
+
+# Greatest Common Divisors: Attacks on RSA and Post-Quantum Security - Martin Albrecht
+
+I plan to present a simple encryption scheme which unlike RSA is believed to be secure against quantum computers. For this, I will start with revisiting how RSA encryption works, why the well-known textbook RSA is insecure, how RSA fails in practice when poor random number generators are used and how, somewhat surprisingly, adding a bit of noise to the underlying problem results in schemes that are believed to be secure in a post-quantum world. I will also talk about algorithms to attack this scheme and, time permitting, what all that has to do with Google’s post-quantum experiment in Chrome.
+
+Bio: Martin is a lecturer in the Information Security Group at Royal Holloway, University of London. His research is focused on all aspects of cryptography. He works on algorithms for solving the mathematical problems underlying it, on post-quantum security and fully homomorphic encryption. He also works on the cryptanalysis of deployed cryptographic protocols and implementations (SSH, TLS). He teaches applied cryptography and penetration testing. He is also a contributor to the Sage Mathematics Software http://www.sagemath.org and many other open-source projects. He blogs at https://martinralbrecht.wordpress.com and publishes code at https://bitbucket.org/malb/ andhttps://github.com/malb
+
+# Real-time localisation and mapping for mobile robots - Stefan Leutenegger
+
+Mobile robots have gained much popularity recently, with applications ranging from domestic settings to industrial inspection and autonomous driving. In order to accomplish any useful task, however, robots need dedicated sensing capabilities paired with suitable algorithms for localisation inside a potentially unknown environment. The recent years have brought better and cheaper sensors as well as ever more computational power, e.g. GPUs, which have all driven the development of real-time algorithms towards higher accuracy and robustness, as well as very dense and large-scale map reconstructions. This talk will introduce the problem formulation of vision-based localisation and mapping, as well as related algorithms and challenges, such as real-time constraints under limited computational resources. Examples presented range from hand-held camera tracking to domestic ground robot and small drone operation.
+
+Bio:  Stefan Leutenegger is a Lecturer in the Dyson Robotics Lab, co-leading it with Prof. Andrew Davison. His research is centred around autonomous robot navigation. This includes localisation and mapping with a suite of sensors, most importantly cameras, to be processed efficiently to yield accurate results at real-time. In the past, he has mostly worked with Unmanned Aerial Systems (UAS), in order to allow them to fly autonomously and close to the ground. Stefan received a BSc and MSc in Mechanical Engineering from ETH Zurich in 2006, 2008, respectively, and a PhD in 2014, working at the Autonomous Systems Lab of ETH Zurich on “Unmanned Solar Airplanes: Design and Algorithms for Efficient and Robust Autonomous Operation”.
